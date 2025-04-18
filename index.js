@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // تأكد إن ملف JSON موجود في نفس المجلد
-const serviceAccount = require('./cs-303-a525a-firebase-adminsdk-fbsvc-0a4b8d1df5.json');
+const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
