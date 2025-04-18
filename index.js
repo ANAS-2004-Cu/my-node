@@ -8,8 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // تأكد إن ملف JSON موجود في نفس المجلد
-const serviceAccount = JSON.parse(process.env.GOOGLE_C
-
+const serviceAccount = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
